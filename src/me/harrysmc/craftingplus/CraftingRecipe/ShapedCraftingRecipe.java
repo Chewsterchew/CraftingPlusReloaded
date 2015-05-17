@@ -1,4 +1,4 @@
-package me.harrysmc.craftingplus.CraftingRecipe;
+package me.harrysmc.craftingplus.craftingrecipe;
 
 import me.harrysmc.craftingplus.CraftingPlus;
 import org.bukkit.Material;

@@ -1,14 +1,10 @@
-package me.harrysmc.craftingplus.CraftingRecipe;
+package me.harrysmc.craftingplus.craftingrecipe;
 
 import me.harrysmc.craftingplus.CraftingPlus;
 import org.bukkit.Bukkit;
-import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.Recipe;
-import org.bukkit.inventory.ShapedRecipe;
-
-import java.util.logging.Logger;
 
 /**
  * Created by HarrysMc on 17/05/2015.

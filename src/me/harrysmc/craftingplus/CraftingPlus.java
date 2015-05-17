@@ -1,6 +1,6 @@
 package me.harrysmc.craftingplus;
 
-import me.harrysmc.craftingplus.CraftingRecipe.ShapedCraftingRecipe;
+import me.harrysmc.craftingplus.craftingrecipe.ShapedCraftingRecipe;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
@@ -23,13 +23,13 @@ public class CraftingPlus extends JavaPlugin {
                 .setIngredient('#', Material.AIR).setIngredient('O', Material.OBSIDIAN).setIngredient('G', Material.GOLD_INGOT)
                 .setup();
 
-        log.info("All recipes setup.");
+        log.info("All recipes setup!");
     }
 
     @Override
     public void onDisable(){
         Bukkit.getServer().clearRecipes();
-        log.info("Recipes cleared.");
+        log.info("Recipes cleared!");
     }
 
 }
