@@ -27,6 +27,7 @@ public abstract class CraftingRecipe {
     }
 
     public void setup(){
+
         if(!(config.contains("enabled." + name))){
             plugin.getLogger().info("Error loading " + name + " option from config.");
             return;
