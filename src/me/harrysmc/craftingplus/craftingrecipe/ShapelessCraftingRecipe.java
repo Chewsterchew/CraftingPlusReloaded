@@ -1,6 +1,7 @@
 package me.harrysmc.craftingplus.craftingrecipe;
 
 import me.harrysmc.craftingplus.CraftingPlus;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.Recipe;
@@ -29,10 +30,9 @@ public class ShapelessCraftingRecipe extends CraftingRecipe {
         return this;
     }
 
-
     @Override
-    public Recipe getRecipe() {
-        return recipe;
+    public void addRecipe() {
+        Bukkit.getServer().addRecipe(recipe);
     }
 
 }

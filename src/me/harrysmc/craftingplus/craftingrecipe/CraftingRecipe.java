@@ -6,6 +6,8 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.Recipe;
 
+import java.util.logging.Logger;
+
 /**
  * Created by HarrysMc on 17/05/2015.
  */
@@ -14,6 +16,7 @@ public abstract class CraftingRecipe {
 
     CraftingPlus plugin;
     FileConfiguration config;
+    Logger log;
 
     String name;
 
@@ -23,8 +26,10 @@ public abstract class CraftingRecipe {
         this.plugin = plugin;
         this.name = name;
 
+        log = plugin.getLogger();
         config = plugin.getConfig();
         config.addDefault("enabled." + name, true);
+        plugin.saveConfig();
 
     }
 
@@ -36,11 +41,14 @@ public abstract class CraftingRecipe {
         }
 
         if(config.getBoolean("enabled." + name)){
-            Bukkit.addRecipe(getRecipe());
+            addRecipe();
+            log.info("HERE");
         }
+
+        log.info("TEST 4");
 
     }
 
-    public abstract Recipe getRecipe();
+    public abstract void addRecipe();
 
 }
