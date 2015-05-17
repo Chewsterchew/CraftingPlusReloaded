@@ -1,6 +1,6 @@
 package me.harrysmc.craftingplus;
 
-import me.harrysmc.craftingplus.tempcraftingrecipe.ShapedCraftingRecipe;
+import me.harrysmc.craftingplus.craftingrecipe.ShapedCraftingRecipe;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
