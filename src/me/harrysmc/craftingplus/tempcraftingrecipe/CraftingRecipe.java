@@ -1,4 +1,4 @@
-package me.harrysmc.craftingplus.craftingrecipe;
+package me.harrysmc.craftingplus.tempcraftingrecipe;
 
 import me.harrysmc.craftingplus.CraftingPlus;
 import org.bukkit.Bukkit;
@@ -19,11 +19,13 @@ public abstract class CraftingRecipe {
 
 
     public CraftingRecipe(CraftingPlus plugin, String name, ItemStack itemStack){
+
         this.plugin = plugin;
         this.name = name;
 
         config = plugin.getConfig();
         config.addDefault("enabled." + name, true);
+
     }
 
     public void setup(){
