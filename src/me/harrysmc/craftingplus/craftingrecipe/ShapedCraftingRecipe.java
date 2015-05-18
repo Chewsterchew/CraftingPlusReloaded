@@ -16,9 +16,9 @@ public class ShapedCraftingRecipe extends CraftingRecipe{
     ItemStack itemStack;
 
 
-    public ShapedCraftingRecipe(CraftingPlus plugin, String name, ItemStack itemStack, String[] pattern){
+    public ShapedCraftingRecipe(CraftingPlus plugin, String name, ItemStack itemStack, boolean defaultEnabled, String[] pattern){
 
-        super(plugin, name, itemStack);
+        super(plugin, name, itemStack, defaultEnabled);
 
         this.itemStack = itemStack;
 

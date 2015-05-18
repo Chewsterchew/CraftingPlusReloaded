@@ -22,7 +22,7 @@ public abstract class CraftingRecipe {
     String name;
 
 
-    public CraftingRecipe(CraftingPlus plugin, String name, ItemStack itemStack){
+    public CraftingRecipe(CraftingPlus plugin, String name, ItemStack itemStack, boolean defaultEnabled){
 
         this.plugin = plugin;
         this.name = name;
@@ -30,7 +30,7 @@ public abstract class CraftingRecipe {
         log = plugin.getLogger();
         config = plugin.getConfig();
 
-        config.addDefault("enabled." + name, true);
+        config.addDefault("enabled." + name, defaultEnabled);
         plugin.saveConfig();
 
     }
