@@ -3,6 +3,7 @@ package me.harrysmc.craftingplus.craftingrecipe;
 import me.harrysmc.craftingplus.CraftingPlus;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.Recipe;
 
@@ -28,19 +29,21 @@ public abstract class CraftingRecipe {
 
         log = plugin.getLogger();
         config = plugin.getConfig();
+
         config.addDefault("enabled." + name, true);
-        
+
     }
 
     public void setup(){
 
         if(!(config.contains("enabled." + name))){
-            plugin.getLogger().info("Error loading " + name + " option from config.");
+            log.warning("ERROR finding: 'enabled." + name + "' in the config.");
             return;
         }
 
-        if(config.getBoolean("enabled." + name)){
+        if(config.getBoolean("enabled." + name)) {
             plugin.getServer().addRecipe(getRecipe());
+            log.info("Yep!");
         }
 
     }
