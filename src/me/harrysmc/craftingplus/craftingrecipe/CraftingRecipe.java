@@ -43,7 +43,6 @@ public abstract class CraftingRecipe {
 
         if(config.getBoolean("enabled." + name)) {
             plugin.getServer().addRecipe(getRecipe());
-            log.info("Yep!");
         }
 
     }

@@ -1,3 +1,11 @@
 name: CraftingPlus
 version: 0.1
 main: me.harrysmc.craftingplus.CraftingPlus
+commands:
+   craftingplus:
+      description: Command to use craftingplus.
+      aliases: [crafting+]
+permissions:
+    craftingplus.reload:
+        description: Gives access to reload craftingplus config.
+        default: op
