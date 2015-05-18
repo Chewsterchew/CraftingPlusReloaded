@@ -31,6 +31,7 @@ public abstract class CraftingRecipe {
         config = plugin.getConfig();
 
         config.addDefault("enabled." + name, true);
+        plugin.saveConfig();
 
     }
 
