@@ -20,13 +20,14 @@ public class CraftingPlus extends JavaPlugin {
     public void onEnable(){
 
         getConfig().addDefault("Enabled", true);
-        saveConfig();
 
         new ShapedCraftingRecipe(this, "disc13", new ItemStack(Material.GOLD_RECORD, 1), new String[]{"#O#", "OGO", "#O#"})
                 .setIngredient('#', Material.AIR).setIngredient('O', Material.OBSIDIAN).setIngredient('G', Material.GOLD_INGOT)
                 .setup();
 
         log.info("All recipes setup!");
+
+        getConfig().options().copyDefaults(true);
 
     }
 

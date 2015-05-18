@@ -24,8 +24,6 @@ public class ShapedCraftingRecipe extends CraftingRecipe{
 
         recipe = new ShapedRecipe(itemStack);
         recipe.shape(pattern);
-
-        log.info("Test 2");
     }
 
     public ShapedCraftingRecipe setIngredient(char key, Material ingredient){
@@ -38,7 +36,6 @@ public class ShapedCraftingRecipe extends CraftingRecipe{
 
     public ShapedCraftingRecipe setIngredient(char key, Material ingredient, int data){
 
-        log.info("Test 1");
         recipe.setIngredient(key, ingredient, data);
 
         return this;
@@ -47,10 +44,6 @@ public class ShapedCraftingRecipe extends CraftingRecipe{
 
 
     @Override
-    public void addRecipe() {
-        Bukkit.getServer().addRecipe(recipe);
-        if(!(Bukkit.getServer().getRecipesFor(itemStack).contains(recipe))){ log.info("NOO"); }
-        log.info("HI!");
-    }
+    public Recipe getRecipe() { return recipe; }
 
 }

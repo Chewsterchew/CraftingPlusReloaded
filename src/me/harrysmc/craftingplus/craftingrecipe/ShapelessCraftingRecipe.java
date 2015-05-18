@@ -31,8 +31,6 @@ public class ShapelessCraftingRecipe extends CraftingRecipe {
     }
 
     @Override
-    public void addRecipe() {
-        Bukkit.getServer().addRecipe(recipe);
-    }
+    public Recipe getRecipe() { return recipe; }
 
 }

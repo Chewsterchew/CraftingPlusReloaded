@@ -29,8 +29,7 @@ public abstract class CraftingRecipe {
         log = plugin.getLogger();
         config = plugin.getConfig();
         config.addDefault("enabled." + name, true);
-        plugin.saveConfig();
-
+        
     }
 
     public void setup(){
@@ -41,14 +40,11 @@ public abstract class CraftingRecipe {
         }
 
         if(config.getBoolean("enabled." + name)){
-            addRecipe();
-            log.info("HERE");
+            plugin.getServer().addRecipe(getRecipe());
         }
-
-        log.info("TEST 4");
 
     }
 
-    public abstract void addRecipe();
+    public abstract Recipe getRecipe();
 
 }
