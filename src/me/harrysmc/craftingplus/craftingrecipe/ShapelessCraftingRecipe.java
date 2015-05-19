@@ -15,9 +15,11 @@ public class ShapelessCraftingRecipe extends CraftingRecipe {
     ShapelessRecipe recipe;
 
     public ShapelessCraftingRecipe(CraftingPlus plugin, String name, ItemStack itemStack, boolean defaultEnabled) {
+
         super(plugin, name, itemStack, defaultEnabled);
 
         recipe = new ShapelessRecipe(itemStack);
+
     }
 
     public ShapelessCraftingRecipe addIngredient(int amount, Material ingredient){

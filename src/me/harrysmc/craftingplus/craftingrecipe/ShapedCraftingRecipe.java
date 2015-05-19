@@ -24,6 +24,7 @@ public class ShapedCraftingRecipe extends CraftingRecipe{
 
         recipe = new ShapedRecipe(itemStack);
         recipe.shape(pattern);
+
     }
 
     public ShapedCraftingRecipe setIngredient(char key, Material ingredient){
