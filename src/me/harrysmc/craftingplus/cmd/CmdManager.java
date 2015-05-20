@@ -29,13 +29,15 @@ public class CmdManager implements CommandExecutor{
         if(cmd.getName().equalsIgnoreCase("craftingplus")){
 
             if(args.length == 0){
-                new HelpCmd(player);
+                plugin.getLogger().info("hi");
+                new HelpCmd(plugin, player);
                 return true;
             }
 
             if(args[0].equalsIgnoreCase("help") || args[0].equals("?")){
 
-                new HelpCmd(player);
+
+                new HelpCmd(plugin, player);
 
             }else if(args[0].equalsIgnoreCase("reload")){
 
