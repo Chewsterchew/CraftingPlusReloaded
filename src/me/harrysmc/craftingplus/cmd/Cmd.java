@@ -1,5 +1,6 @@
 package me.harrysmc.craftingplus.cmd;
 
+import me.harrysmc.craftingplus.CraftingPlus;
 import org.bukkit.entity.Player;
 
 /**
@@ -7,9 +8,11 @@ import org.bukkit.entity.Player;
  */
 public abstract class Cmd {
 
-    Player player;
+    protected final Player player;
+    protected final CraftingPlus plugin;
 
-    public Cmd(Player player){
+    public Cmd(CraftingPlus plugin, Player player){
+        this.plugin = plugin;
         this.player = player;
         run();
     }

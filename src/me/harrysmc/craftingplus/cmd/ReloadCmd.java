@@ -8,12 +8,10 @@ import org.bukkit.entity.Player;
  */
 public class ReloadCmd extends Cmd{
 
-    CraftingPlus plugin;
-
     public ReloadCmd(CraftingPlus plugin, Player player) {
-        super(player);
 
-        this.plugin = plugin;
+        super(plugin, player);
+
     }
 
     @Override

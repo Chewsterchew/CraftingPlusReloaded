@@ -1,17 +1,11 @@
 package me.harrysmc.craftingplus;
 
 import me.harrysmc.craftingplus.cmd.CmdManager;
-import me.harrysmc.craftingplus.craftingrecipe.ShapedCraftingRecipe;
-import me.harrysmc.craftingplus.craftingrecipe.ShapelessCraftingRecipe;
-import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
-import org.bukkit.Material;
+import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.HashSet;
-import java.util.Set;
 import java.util.logging.Logger;
 
 /**
@@ -20,14 +14,16 @@ import java.util.logging.Logger;
 
 public class CraftingPlus extends JavaPlugin {
 
-    private Logger log = getLogger();
+    private final Logger log = getLogger();
     private FileConfiguration config = getConfig();
+
     private String permissionMessage;
     private String reloadSuccessMessage;
     private String invalidCommandMessage;
 
     @Override
     public void onEnable(){
+
         setupConfig();
         log.info("Config setup!");
 
@@ -53,13 +49,14 @@ public class CraftingPlus extends JavaPlugin {
     private void addCommands(){
 
         getCommand("craftingplus").setExecutor(new CmdManager(this));
+        getLogger().info("1");
 
     }
 
     private void setupConfig(){
 
         config.addDefault("permission-message", "&cYou do not have permission for this command!");
-        config.addDefault("reload-success-message", "&aThe config has been successfully reloaded.");
+        config.addDefault("reload-success-message", "&aThe crafting+ config has been successfully reloaded.");
         config.addDefault("invalid-command-message", "&cThat is an invalid command. Type '/craftingplus help' for help.");
 
         config.options().copyDefaults(true);
@@ -69,7 +66,10 @@ public class CraftingPlus extends JavaPlugin {
 
     public void reloadData(){
 
-        permissionMessage = ChatColor.translateAlternateColorCodes('&', config.getString("permission-message") );
+        reloadConfig();
+        config = getConfig();
+
+        permissionMessage = ChatColor.translateAlternateColorCodes('&', config.getString("permission-message"));
         reloadSuccessMessage = ChatColor.translateAlternateColorCodes('&', config.getString("reload-success-message"));
         invalidCommandMessage = ChatColor.translateAlternateColorCodes('&', config.getString("invalid-command-message"));
 

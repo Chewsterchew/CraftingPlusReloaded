@@ -10,32 +10,32 @@ import org.bukkit.plugin.PluginDescriptionFile;
  */
 public class HelpCmd extends Cmd{
 
-    CraftingPlus plugin;
-
     public HelpCmd(CraftingPlus plugin, Player player){
 
-        super(player);
-
-        this.plugin = plugin;
+        super(plugin, player);
 
     }
 
     @Override
     protected void run() {
 
-        plugin.getLogger().info("3");
+        final PluginDescriptionFile pdf = plugin.getDescription();
 
-        PluginDescriptionFile pdf = plugin.getDescription();
+        final String prefix = ChatColor.GRAY + ChatColor.ITALIC.toString() + "> ";
+        final String splitter =  ChatColor.GRAY + "+---------------------+";
 
-        player.sendMessage(ChatColor.GRAY + "+------------------+");
-        player.sendMessage(ChatColor.GREEN + "Crafting" + ChatColor.GOLD + "+ " + ChatColor.WHITE + "v" + pdf.getVersion() + ChatColor.GREEN + " by " + ChatColor.GOLD + pdf.getAuthors() + "!");
-        player.sendMessage(ChatColor.GRAY + "+------------------+");
-        player.sendMessage(ChatColor.GREEN + "/craftingplus help|? -> This command gives you this text.");
+        player.sendMessage(splitter);
+        player.sendMessage(ChatColor.GREEN + "Crafting" + ChatColor.GOLD + "+ " + ChatColor.WHITE + pdf.getVersion() + ChatColor.GREEN + " by " + ChatColor.GOLD + pdf.getAuthors().get(0) + "!");
+        player.sendMessage(splitter);
+        player.sendMessage(ChatColor.GREEN + "/craftingplus help|?");
+        player.sendMessage(prefix + ChatColor.GRAY + "Brings you here.");
+
         if(player.hasPermission("craftingplus.reload")){
-            player.sendMessage(ChatColor.GREEN + "/craftingplus reload -> This command reloads config information " +
-                    "excluding enabled/disabled items.");
+            player.sendMessage(ChatColor.GREEN + "/craftingplus reload");
+            player.sendMessage(prefix + ChatColor.GRAY + "This command reloads config information excluding enabled/disabled items.");
         }
-        player.sendMessage(ChatColor.GRAY + "+------------------+");
+
+        player.sendMessage(splitter);
 
     }
 }

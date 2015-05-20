@@ -11,7 +11,7 @@ import org.bukkit.entity.Player;
  */
 public class CmdManager implements CommandExecutor{
 
-    CraftingPlus plugin;
+    private final CraftingPlus plugin;
 
     public CmdManager(CraftingPlus plugin){
         this.plugin = plugin;
@@ -24,12 +24,11 @@ public class CmdManager implements CommandExecutor{
             return false;
         }
 
-        Player player = (Player) sender;
+        final Player player = (Player) sender;
 
         if(cmd.getName().equalsIgnoreCase("craftingplus")){
 
             if(args.length == 0){
-                plugin.getLogger().info("hi");
                 new HelpCmd(plugin, player);
                 return true;
             }

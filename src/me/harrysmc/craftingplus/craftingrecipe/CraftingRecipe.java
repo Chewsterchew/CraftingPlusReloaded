@@ -15,14 +15,14 @@ import java.util.logging.Logger;
 public abstract class CraftingRecipe {
 
 
-    CraftingPlus plugin;
-    FileConfiguration config;
-    Logger log;
+    private final CraftingPlus plugin;
+    private final FileConfiguration config;
+    private final Logger log;
 
-    String name;
+    private final String name;
 
 
-    public CraftingRecipe(CraftingPlus plugin, String name, ItemStack itemStack, boolean defaultEnabled){
+    public CraftingRecipe(CraftingPlus plugin, String name, boolean defaultEnabled){
 
         this.plugin = plugin;
         this.name = name;
@@ -31,6 +31,7 @@ public abstract class CraftingRecipe {
         config = plugin.getConfig();
 
         config.addDefault("enabled." + name, defaultEnabled);
+        config.options().copyDefaults(true);
         plugin.saveConfig();
 
     }
@@ -51,3 +52,4 @@ public abstract class CraftingRecipe {
     public abstract Recipe getRecipe();
 
 }
+;

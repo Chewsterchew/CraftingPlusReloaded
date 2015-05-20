@@ -12,15 +12,12 @@ import org.bukkit.inventory.ShapedRecipe;
  */
 public class ShapedCraftingRecipe extends CraftingRecipe{
 
-    ShapedRecipe recipe;
-    ItemStack itemStack;
+    private final ShapedRecipe recipe;
 
 
     public ShapedCraftingRecipe(CraftingPlus plugin, String name, ItemStack itemStack, boolean defaultEnabled, String[] pattern){
 
-        super(plugin, name, itemStack, defaultEnabled);
-
-        this.itemStack = itemStack;
+        super(plugin, name, defaultEnabled);
 
         recipe = new ShapedRecipe(itemStack);
         recipe.shape(pattern);

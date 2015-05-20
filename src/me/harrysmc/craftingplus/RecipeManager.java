@@ -10,7 +10,7 @@ import org.bukkit.inventory.ItemStack;
  */
 public class RecipeManager {
 
-    CraftingPlus plugin;
+    private final CraftingPlus plugin;
 
     public RecipeManager(CraftingPlus plugin){
 

@@ -12,11 +12,11 @@ import org.bukkit.inventory.ShapelessRecipe;
  */
 public class ShapelessCraftingRecipe extends CraftingRecipe {
 
-    ShapelessRecipe recipe;
+    private final ShapelessRecipe recipe;
 
     public ShapelessCraftingRecipe(CraftingPlus plugin, String name, ItemStack itemStack, boolean defaultEnabled) {
 
-        super(plugin, name, itemStack, defaultEnabled);
+        super(plugin, name, defaultEnabled);
 
         recipe = new ShapelessRecipe(itemStack);
 
