@@ -25,10 +25,10 @@ public class RecipeManager {
         //<editor-fold desc ="Music Discs">
         createDisk("13", Material.GOLD_RECORD, Material.GOLD_INGOT);
         createDisk("Cat", Material.GREEN_RECORD, Material.EMERALD);
-        createDisk("Blocks", Material.RECORD_3, Material.BRICK);
+        createDisk("Blocks", Material.RECORD_3, Material.CLAY_BRICK);
         createDisk("Chirp", Material.RECORD_4, Material.REDSTONE);
         createDisk("Far", Material.RECORD_5, Material.SLIME_BALL);
-        createDisk("Mall", Material.RECORD_6, Material.CLAY);
+        createDisk("Mall", Material.RECORD_6, Material.CLAY_BALL);
         createDisk("Mellohi", Material.RECORD_7, Material.GHAST_TEAR);
         createDisk("Stal", Material.RECORD_8, Material.COAL);
         createDisk("Strad", Material.RECORD_9, Material.QUARTZ);
@@ -38,35 +38,35 @@ public class RecipeManager {
         //</editor-fold>
 
         //<editor-fold desc ="Horse Armour">
-        createHorseArmor("iron", Material.IRON_BARDING, 15);
-        createHorseArmor("gold", Material.GOLD_BARDING, 14);
-        createHorseArmor("diamond", Material.DIAMOND_BARDING, 11);
+        createHorseArmor("iron", Material.IRON_BARDING, Material.IRON_INGOT,15);
+        createHorseArmor("gold", Material.GOLD_BARDING, Material.GOLD_INGOT,14);
+        createHorseArmor("diamond", Material.DIAMOND_BARDING, Material.DIAMOND ,11);
         //</editor-fold>
 
         //<editor-fold desc ="Ice">
-        new ShapedCraftingRecipe(plugin, "ice", new ItemStack(Material.ICE, 1), true, new String[]{"SSS", "SWS", "SSS"})
+        new ShapedCraftingRecipe(plugin, "ice", new ItemStack(Material.ICE, 1), new String[]{"SSS", "SWS", "SSS"})
                 .setIngredient('S', Material.SNOW_BALL).setIngredient('W', Material.WATER_BUCKET)
                 .setup();
 
-        new ShapelessCraftingRecipe(plugin, "packedIce", new ItemStack(Material.PACKED_ICE, 1), true)
+        new ShapelessCraftingRecipe(plugin, "packedIce", new ItemStack(Material.PACKED_ICE, 1))
                 .addIngredient(4, Material.ICE)
                 .setup();
         //</editor-fold>
 
         //<editor-fold desc ="Miscellaneous">
-        new ShapedCraftingRecipe(plugin, "saddle", new ItemStack(Material.SADDLE, 1), true, new String[]{"LLL", "SLS", "I I"})
+        new ShapedCraftingRecipe(plugin, "saddle", new ItemStack(Material.SADDLE, 1), new String[]{"LLL", "SLS", "I I"})
                 .setIngredient('L', Material.LEATHER).setIngredient('S', Material.STRING)
                 .setIngredient('I', Material.IRON_INGOT).setup();
 
-        new ShapedCraftingRecipe(plugin, "nameTag", new ItemStack(Material.NAME_TAG, 1), true, new String[]{"  S", " P ", "P  "})
+        new ShapedCraftingRecipe(plugin, "nameTag", new ItemStack(Material.NAME_TAG, 1), new String[]{"  S", " P ", "P  "})
                 .setIngredient('S', Material.STRING).setIngredient('P', Material.PAPER)
                 .setup();
 
-        new ShapedCraftingRecipe(plugin, "cobWeb", new ItemStack(Material.WEB, 1), true, new String[]{"SSS", "SBS", "SSS"})
-                .setIngredient('S', Material.STRING).setIngredient('B', Material.SNOW_BALL)
+        new ShapedCraftingRecipe(plugin, "cobWeb", new ItemStack(Material.WEB, 1), new String[]{"SSS", "SBS", "SSS"})
+                .setIngredient('S', Material.STRING).setIngredient('B', Material.SLIME_BALL)
                 .setup();
 
-        new ShapedCraftingRecipe(plugin, "mobSpawner", new ItemStack(Material.MOB_SPAWNER, 1), false, new String[]{"III", "IPI", "III"})
+        new ShapedCraftingRecipe(plugin, "mobSpawner", new ItemStack(Material.MOB_SPAWNER, 1), new String[]{"III", "IPI", "III"})
                 .setIngredient('I', Material.IRON_FENCE).setIngredient('P', Material.MONSTER_EGG, 90)
                 .setup();
         //</editor-fold>
@@ -75,7 +75,7 @@ public class RecipeManager {
 
     private void createDisk(String name, Material disc, Material item, int data){
 
-        new ShapedCraftingRecipe(plugin, "disc" + name, new ItemStack(disc, 1), true, new String[]{" O ", "OMO", " O "})
+        new ShapedCraftingRecipe(plugin, "disc" + name, new ItemStack(disc, 1), new String[]{" O ", "OMO", " O "})
                 .setIngredient('O', Material.OBSIDIAN).setIngredient('M', item, data)
                 .setup();
 
@@ -87,10 +87,10 @@ public class RecipeManager {
 
     }
 
-    private void createHorseArmor(String name, Material armor, int data){
+    private void createHorseArmor(String name, Material armor, Material ore, int data){
 
-        new ShapedCraftingRecipe(plugin, name + "HorseArmor", new ItemStack(armor, 1), true, new String[]{"  I", "IBI", "III"})
-                .setIngredient('I', Material.IRON_INGOT).setIngredient('B', Material.WOOL, data)
+        new ShapedCraftingRecipe(plugin, name + "HorseArmor", new ItemStack(armor, 1), new String[]{"  I", "IBI", "III"})
+                .setIngredient('I', ore).setIngredient('B', Material.WOOL, data)
                 .setup();
 
     }

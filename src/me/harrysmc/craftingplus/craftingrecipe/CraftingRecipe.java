@@ -22,17 +22,13 @@ public abstract class CraftingRecipe {
     private final String name;
 
 
-    public CraftingRecipe(CraftingPlus plugin, String name, boolean defaultEnabled){
+    public CraftingRecipe(CraftingPlus plugin, String name){
 
         this.plugin = plugin;
         this.name = name;
 
         log = plugin.getLogger();
         config = plugin.getConfig();
-
-        config.addDefault("enabled." + name, defaultEnabled);
-        config.options().copyDefaults(true);
-        plugin.saveConfig();
 
     }
 
@@ -52,4 +48,3 @@ public abstract class CraftingRecipe {
     public abstract Recipe getRecipe();
 
 }
-;

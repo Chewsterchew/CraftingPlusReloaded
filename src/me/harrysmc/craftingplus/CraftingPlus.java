@@ -3,9 +3,15 @@ package me.harrysmc.craftingplus;
 import me.harrysmc.craftingplus.cmd.CmdManager;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.inventory.Recipe;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
 import java.util.logging.Logger;
 
 /**
@@ -13,6 +19,8 @@ import java.util.logging.Logger;
  */
 
 public class CraftingPlus extends JavaPlugin {
+
+    private List<Recipe> vanillaRecipes;
 
     private final Logger log = getLogger();
     private FileConfiguration config = getConfig();
@@ -24,12 +32,13 @@ public class CraftingPlus extends JavaPlugin {
     @Override
     public void onEnable(){
 
-        setupConfig();
+        saveDefaultConfig();
         log.info("Config setup!");
 
         reloadData();
         log.info("Data reloaded!");
 
+        iterateVanillaRecipes();
         new RecipeManager(this);
         log.info("All recipes setup!");
 
@@ -49,18 +58,15 @@ public class CraftingPlus extends JavaPlugin {
     private void addCommands(){
 
         getCommand("craftingplus").setExecutor(new CmdManager(this));
-        getLogger().info("1");
 
     }
 
-    private void setupConfig(){
+    private void iterateVanillaRecipes(){
 
-        config.addDefault("permission-message", "&cYou do not have permission for this command!");
-        config.addDefault("reload-success-message", "&aThe crafting+ config has been successfully reloaded.");
-        config.addDefault("invalid-command-message", "&cThat is an invalid command. Type '/craftingplus help' for help.");
-
-        config.options().copyDefaults(true);
-        saveConfig();
+        vanillaRecipes = new ArrayList<Recipe>();
+        for(Iterator it = Bukkit.recipeIterator(); it.hasNext();){
+            vanillaRecipes.add((Recipe) it.next());
+        }
 
     }
 
@@ -78,5 +84,7 @@ public class CraftingPlus extends JavaPlugin {
     public String getPermissionMessage(){ return permissionMessage; }
     public String getReloadSuccessMessage(){ return reloadSuccessMessage; }
     public String getInvalidCommandMessage(){ return invalidCommandMessage; }
+    public List<Recipe> getVanillaRecipes(){ return vanillaRecipes; }
+
 
 }

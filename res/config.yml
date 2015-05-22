@@ -1,0 +1,49 @@
+# ###################### #
+#
+# Crafting+ v0.6
+# Craft the Uncraftable
+# Copyright HarrysMc
+#
+# ###################### #
+
+# ------------------------------ #
+# Message settings
+# ------------------------------ #
+
+#Message to a player if they do not have permission for a Crafting+ command.
+permission-message: '&cYou do not have permission for this command!'
+
+#Message to a player if the Crafting+ configuration was successfully reloaded.
+reload-success-message: '&aThe crafting+ config has been successfully reloaded.'
+
+#Message to player if they enter an invalid Crafting+ command.
+invalid-command-message: '&cThat is an invalid command. Type ''/craftingplus help''
+  for help.'
+
+# ------------------------------ #
+# Enable or Disable item recipes.
+# ------------------------------ #
+
+#Write true/false depending if you want that item recipe to be enabled/disabled.
+enabled:
+  disc13: true
+  discCat: true
+  discBlocks: true
+  discChirp: true
+  discFar: true
+  discMall: true
+  discMellohi: true
+  discStal: true
+  discStrad: true
+  discWard: true
+  disc11: true
+  discWait: true
+  ironHorseArmor: true
+  goldHorseArmor: true
+  diamondHorseArmor: true
+  ice: true
+  packedIce: true
+  saddle: true
+  nameTag: true
+  cobWeb: true
+  mobSpawner: false
