@@ -1,17 +1,17 @@
-name: CraftingPlus
-version: 0.6
+name: CraftingPlusReloaded
+version: 1.0
 description: This plugins adds crafting recipes for uncraftable vanilla items.
-author: HarrysMc
-website: http://www.spigotmc.org/members/harrysmc.17509/
+author: Chewsterchew
+website: http://www.github.com/Chewsterchew
 
 main: me.harrysmc.craftingplus.CraftingPlus
 
 commands:
-   craftingplus:
+   cpr:
       description: Command to use craftingplus.
       aliases: [crafting+]
 
 permissions:
-    craftingplus.reload:
-        description: Gives access to reload craftingplus config.
+    cpr.reload:
+        description: Gives access to reload CPR config.
         default: op
