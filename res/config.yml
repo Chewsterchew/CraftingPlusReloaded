@@ -1,8 +1,7 @@
 # ###################### #
 #
-# Crafting+ v0.6
+# Crafting+ Reloaded v1.0
 # Craft the Uncraftable
-# Copyright HarrysMc
 #
 # ###################### #
 
@@ -11,13 +10,13 @@
 # ------------------------------ #
 
 #Message to a player if they do not have permission for a Crafting+ command.
-permission-message: '&cYou do not have permission for this command!'
+permission-message: '&cCPR Error! You do not have permission to use this command!'
 
 #Message to a player if the Crafting+ configuration was successfully reloaded.
-reload-success-message: '&aThe crafting+ config has been successfully reloaded.'
+reload-success-message: '&aThe CPR config has been successfully reloaded.'
 
 #Message to player if they enter an invalid Crafting+ command.
-invalid-command-message: '&cThat is an invalid command. Type ''/craftingplus help''
+invalid-command-message: '&cThat is an invalid command. Type ''/cpr help''
   for help.'
 
 # ------------------------------ #
@@ -25,6 +24,7 @@ invalid-command-message: '&cThat is an invalid command. Type ''/craftingplus hel
 # ------------------------------ #
 
 #Write true/false depending if you want that item recipe to be enabled/disabled.
+#See Recipe List here: https://github.com/Chewsterchew/CraftingPlus/blob/master/recipes.md
 enabled:
   disc13: true
   discCat: true
