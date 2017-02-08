@@ -4,7 +4,7 @@
 	<groupId>me.harrysmc.craftingplus</groupId>
 	<artifactId>CraftingPlusReloaded</artifactId>
 	<version>1.0.0<!--  -Dev-${BUILD_NUMBER}--></version>
-	<name>Statz</name>
+	<name>CraftingPlusReloaded</name>
 	<description>Maven project for Spigot plugin CraftingPlusReloaded
 	</description>
 	<url>https://www.github.com/Chewsterchew/</url>
