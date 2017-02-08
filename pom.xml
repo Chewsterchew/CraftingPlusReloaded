@@ -2,10 +2,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>me.harrysmc.craftingplus</groupId>
-	<artifactId>Statz</artifactId>
-	<version>1.4.2<!--  -Dev-${BUILD_NUMBER}--></version>
+	<artifactId>CraftingPlusReloaded</artifactId>
+	<version>1.0.0<!--  -Dev-${BUILD_NUMBER}--></version>
 	<name>Statz</name>
-	<description>Maven project for Spigot plugin Statz
+	<description>Maven project for Spigot plugin CraftingPlusReloaded
 	</description>
 	<url>https://www.github.com/Chewsterchew/</url>
 	<profiles>
