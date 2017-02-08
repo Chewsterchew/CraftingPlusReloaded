@@ -1,8 +1,9 @@
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>PUT YOUR GROUPID HERE</groupId>
-    <artifactId>PUT YOUR ARTIFACTID HERE</artifactId>
-    <version>PUT YOUR PLUGIN VERSION HERE</version>
+    <groupId>me.harrysmc.craftingplus</groupId>
+	<artifactId>CraftingPlusReloaded</artifactId>
+	<version>1.0.0<!--  -Dev-${BUILD_NUMBER}--></version>
+	<name>CraftingPlusReloaded</name>
 
 <repositories>
     <repository>
